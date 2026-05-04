@@ -1,0 +1,34 @@
+@import "../../vars.css";
+.projectsSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sectionTitle{
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    font-family: var(--font-outfit);
+    background:linear-gradient(90deg, #e3ffe7 0%, #8faeff 100%);
+  
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom:0rem ;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .projectsContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+    
+}

@@ -1,0 +1,18 @@
+:root {
+  --color-text: #f8fafc;
+  --color-primary: #6366f1;
+  --color-secondary: #334155;
+  --color-bg: #0f172a;
+  --color-accent: #0ea5e9;
+  --color-surface: rgba(30, 41, 59, 0.7);
+  --color-border: rgba(148, 163, 184, 0.1);
+
+  --font-roboto: 'Roboto', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}

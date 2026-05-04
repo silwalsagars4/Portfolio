@@ -1,0 +1,133 @@
+@import "../../vars.css";
+
+.aboutSection {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem; /* smaller horizontal padding for mobile */
+}
+
+.aboutBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  min-height: fit-content;
+}
+
+.imgSagar {
+  width: fit-content;
+  border-radius: 0;
+  filter: drop-shadow(4px 4px 20px rgba(255, 255, 255, 0.479));
+  max-width: 70%; /* scale down on small screens */
+  height: auto;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.infoCard {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  gap: 1.5rem;
+  transition: var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.infoCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  transform: translateX(10px);
+}
+
+.discriptionTxt {
+  max-width: 40rem;
+  text-align: start;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  padding: 0 0.5rem;
+  color: var(--text-color);
+}
+
+.aboutTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  font-family: var(--font-outfit);
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #f8fafc 0%, #6366f1 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.imageWrapper img {
+  width: 4rem;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .aboutSection {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .aboutBox {
+    min-height: auto ; /* allow height to shrink */
+    padding: 0.5rem;
+  }
+
+  .aboutContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .imgSagar {
+    display: none;
+  }
+
+  .infoCard {
+    flex-direction: row; /* stack vertically */
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .discriptionTxt {
+    max-width: 100%;
+    font-size: 0.75rem;
+  }
+
+  .aboutTxt {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+
+  .titleText {
+    font-size: 0.9rem;
+    text-align:start;
+  }
+
+  .imageWrapper img {
+    width: 2.5rem;
+    height: auto;
+  }
+}

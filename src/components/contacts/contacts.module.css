@@ -1,0 +1,83 @@
+@import "../../vars.css";
+.contactSection {
+  background: var(--color-bg);
+  border-top: 1px solid var(--glass-border);
+  padding: 4rem 2rem;
+}
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+.contactTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: left;
+  font-family: var(--font-outfit);
+  background: linear-gradient(90deg, #f8fafc 0%, #6366f1 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+.contactDescription {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  text-align: left;
+  margin-bottom: 2rem;
+  max-width: 30rem;
+}
+.contactIcon {
+  width: 2.5rem;
+  cursor: pointer;
+}
+.contactIcon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.contactLinks {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-rows: repeat(3, auto); /* exactly 3 rows */
+  grid-auto-flow: column; /* fill items column by column */
+  gap: 1rem 3rem; /* space between items */
+  justify-content: start; /* align to the left */
+  align-items: center;
+}
+.contactLinkTxt {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+  .contactMethods {
+    grid-template-rows: repeat(4, auto); /* exactly 4 rows */
+    grid-auto-flow: row; /* fill items row by row */
+    gap: 0.75rem; /* space between items */
+    justify-content: center; /* center items */
+    align-items: center;
+  }
+  .contactTitle {
+    font-size: 2rem;
+  }
+  .contactDiscription {
+    font-size: 1rem;
+  }
+  .contactIcon {
+    width: 1.75rem;
+    cursor: pointer;
+  }
+}
