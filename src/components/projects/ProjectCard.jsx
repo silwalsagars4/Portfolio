@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import TerminalText from "../TerminalText/TerminalText";
 
 
 const ProjectCard = ({ image, title, description, tech, demoLink, codeLink, index }) => {
@@ -11,7 +12,7 @@ const ProjectCard = ({ image, title, description, tech, demoLink, codeLink, inde
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="glass-card group rounded-2xl overflow-hidden flex flex-col h-full border border-white/5 hover:border-primary/50 transition-all duration-500"
+      className="tech-border group overflow-hidden flex flex-col h-full hover:border-primary/50 transition-all duration-500"
     >
       <div className="relative aspect-video overflow-hidden">
         <img
@@ -44,9 +45,9 @@ const ProjectCard = ({ image, title, description, tech, demoLink, codeLink, inde
         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <p className="text-muted text-sm line-clamp-3 mb-4 flex-1">
-          {description}
-        </p>
+        <div className="text-muted text-sm mb-4 flex-1">
+          <TerminalText text={description} delay={index * 0.3} className="leading-relaxed" />
+        </div>
         <div className="flex flex-wrap gap-2 mt-auto">
           {tech.map((item, index) => (
             <span

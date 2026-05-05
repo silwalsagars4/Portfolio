@@ -4,7 +4,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-12 px-6 border-t border-white/5 bg-background">
+    <footer className="py-12 px-6 bg-background relative">
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-xl font-display font-bold text-white">
           SAGAR<span className="text-primary">.</span>

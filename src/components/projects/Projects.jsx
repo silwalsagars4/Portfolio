@@ -41,8 +41,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-6 bg-background relative overflow-hidden">
+      <div className="scanline" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

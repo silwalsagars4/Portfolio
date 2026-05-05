@@ -5,19 +5,28 @@ import Experience from "./components/experience/Experience";
 import Projects from "./components/projects/Projects";
 import Contacts from "./components/contacts/Contacts";
 import Footer from "./components/Footer/Footer";
+import FloatingBall from "./components/utils/FloatingBall";
 
 function App() {
   return (
-    <div className="bg-background min-h-screen selection:bg-primary selection:text-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contacts />
-      </main>
-      <Footer />
+    <div className="bg-background min-h-screen selection:bg-primary selection:text-background relative">
+      <div className="noise" />
+      <div className="site-frame">
+        <Navbar />
+        <main>
+          <Hero />
+          <div className="section-divider" />
+          <About />
+          <div className="section-divider" />
+          <Experience />
+          <div className="section-divider" />
+          <Projects />
+          <div className="section-divider" />
+          <Contacts />
+        </main>
+        <Footer />
+        <FloatingBall />
+      </div>
     </div>
   );
 }

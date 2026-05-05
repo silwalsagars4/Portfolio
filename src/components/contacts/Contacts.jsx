@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import TerminalText from "../TerminalText/TerminalText";
 
 const ContactLink = ({ href, icon: Icon, label, index }) => (
   <motion.a
@@ -12,7 +13,7 @@ const ContactLink = ({ href, icon: Icon, label, index }) => (
     href={href}
     target="_blank"
     rel="noreferrer"
-    className="flex items-center gap-4 p-4 glass-card rounded-2xl hover:bg-primary/10 hover:border-primary/50 transition-all group"
+    className="flex items-center gap-4 p-4 tech-border hover:bg-primary/10 hover:border-primary/50 transition-all group"
   >
     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
       <Icon className="text-primary" size={20} />
@@ -36,14 +37,19 @@ const Contacts = () => {
       label: "Linkedin.com/in/silwalsagar1"
     },
     {
-      href: "https://github.com/silwalsagar1",
+      href: "https://github.com/silwalsagars4",
       icon: FaGithub,
-      label: "Github.com/silwalsagar1"
+      label: "Github.com/silwalsagars4"
     },
     {
       href: "http://www.facebook.com/Silwal.sagar.4",
       icon: FaFacebook,
       label: "Facebook.com/Silwal_sagar"
+    },
+    {
+      href: "https://wa.me/9779861546739",
+      icon: FaWhatsapp,
+      label: "Connect with me in WhatsApp"
     },
     {
       href: "https://www.instagram.com/ssg.grr__/",
@@ -59,16 +65,16 @@ const Contacts = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="glass-card p-8 md:p-12 rounded-3xl border-primary/20 relative overflow-hidden"
+          className="tech-border p-8 md:p-12 relative overflow-hidden"
         >
           {/* Decorative Background */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] -z-10" />
-          
+
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Get In Touch</h2>
-            <p className="text-muted max-w-md mx-auto">
-              Feel free to reach out for collaborations or just a friendly hello! I'm always open to new opportunities.
-            </p>
+            <div className="text-muted max-w-md mx-auto">
+              <TerminalText text="Feel free to reach out for collaborations or just a friendly hello! I'm always open to new opportunities." />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

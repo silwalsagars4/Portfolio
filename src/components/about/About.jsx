@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Server, Shield, Network, Cloud } from "lucide-react";
 import Aboutimg from "../../assets/about/sagarNoBG.png";
-import { cn } from "../../utils/cn";
+import TerminalText from "../TerminalText/TerminalText";
 
 const InfoCard = ({ icon: Icon, title, description, index }) => {
   return (
@@ -11,7 +11,7 @@ const InfoCard = ({ icon: Icon, title, description, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="glass-card p-6 rounded-2xl flex gap-4 group"
+      className="tech-border p-6 flex gap-4 group"
     >
       <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
         <Icon className="text-primary" size={24} />
@@ -20,9 +20,9 @@ const InfoCard = ({ icon: Icon, title, description, index }) => {
         <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <p className="text-muted text-sm leading-relaxed">
-          {description}
-        </p>
+        <div className="text-muted text-sm leading-relaxed">
+          <TerminalText text={description} delay={index * 0.2} />
+        </div>
       </div>
     </motion.div>
   );

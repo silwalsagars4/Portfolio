@@ -4,7 +4,8 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Heroimg from "../../assets/hero/sagar.png";
 import InteractiveBackground from "./InteractiveBackground";
 import { cn } from "../../utils/cn";
-import { Shield, Cloud, Code2, Server } from "lucide-react";
+import { Shield, Cloud, Code2, Server, Download } from "lucide-react";
+import TerminalText from "../TerminalText/TerminalText";
 
 const Hero = () => {
   const mouseX = useMotionValue(0);
@@ -26,7 +27,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0a0a0c]">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-[#0a0a0c]">
       {/* Interactive Background */}
       <InteractiveBackground />
 
@@ -63,27 +64,28 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl text-muted leading-relaxed mb-10 max-w-xl">
-            Associate Network and System Engineer @ <span className="text-white font-semibold underline decoration-primary/50 underline-offset-4">CloudHimalaya</span>. 
-            Architecting secure, scalable, and resilient digital infrastructures.
-          </p>
+          <div className="text-xl text-muted leading-relaxed mb-10 max-w-xl">
+            <TerminalText text="Associate Network and System Engineer @ CloudHimalaya. Architecting secure, scalable, and resilient digital infrastructures." />
+          </div>
 
           <div className="flex flex-wrap gap-6">
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => (window.location.href = "mailto:silwalsagars4@gmail.com")}
-              className="px-10 py-5 bg-primary text-background font-black rounded-xl shadow-[0_20px_40px_-15px_rgba(0,242,255,0.4)] transition-all uppercase tracking-widest text-sm"
+              className="px-10 py-5 tech-border bg-primary text-background font-black shadow-[0_20px_40px_-15px_rgba(0,242,255,0.4)] transition-all uppercase tracking-widest text-sm"
             >
               Get In Touch
             </motion.button>
             <motion.a
-              href="#projects"
+              href="/Sagar_Silwal_CV.pdf"
+              download
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 border border-white/10 text-white font-black rounded-xl backdrop-blur-md hover:bg-white/5 transition-all uppercase tracking-widest text-sm flex items-center gap-2"
+              className="px-10 py-5 tech-border text-white font-black hover:bg-white/5 transition-all uppercase tracking-widest text-sm flex items-center gap-2"
             >
-              View Projects
+              <Download size={18} />
+              Download CV
             </motion.a>
           </div>
         </motion.div>
@@ -102,7 +104,7 @@ const Hero = () => {
             <motion.div
               whileHover={{ rotateY: 10, rotateX: -10 }}
               style={{ perspective: 1000 }}
-              className="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px] rounded-full overflow-hidden glass border-white/10 shadow-[0_0_100px_rgba(0,242,255,0.1)] transition-all duration-500"
+              className="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px] rounded-full overflow-hidden tech-border border-white/10 shadow-[0_0_100px_rgba(0,242,255,0.1)] transition-all duration-500"
             >
               <img
                 src={Heroimg}
