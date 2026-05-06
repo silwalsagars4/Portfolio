@@ -27,7 +27,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-[#0a0a0c]">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden bg-[#0a0a0c]">
       {/* Interactive Background */}
       <InteractiveBackground />
 
@@ -57,9 +57,9 @@ const Hero = () => {
             Available for New Opportunities
           </motion.div>
           
-          <h1 className="text-6xl md:text-8xl font-display font-bold leading-[1] mb-8 tracking-tighter">
+          <h1 className="text-5xl md:text-8xl font-display font-bold leading-[1.1] mb-8 tracking-tighter">
             SAGAR<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            <span className="text-gradient">
               SILWAL
             </span>
           </h1>
@@ -129,9 +129,9 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0], x: [0, 5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-4 -left-4 md:-top-10 md:-left-12 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-secondary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              className="absolute -top-4 -left-4 md:-top-10 md:-left-12 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
             >
-              <Shield className="text-secondary w-4 h-4 md:w-5 md:h-5" />
+              <Shield className="text-primary w-4 h-4 md:w-5 md:h-5" />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-xs md:text-sm whitespace-nowrap">SecOps</span>
                 <span className="text-muted text-[8px] md:text-[10px] uppercase tracking-tighter">Hardened</span>
@@ -153,9 +153,9 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              className="absolute bottom-1/4 -left-8 md:-left-24 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-white/20 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              className="absolute bottom-1/4 -left-8 md:-left-24 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
             >
-              <Server className="text-white w-4 h-4 md:w-5 md:h-5" />
+              <Server className="text-primary w-4 h-4 md:w-5 md:h-5" />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-xs md:text-sm whitespace-nowrap">Infra</span>
                 <span className="text-muted text-[8px] md:text-[10px] uppercase tracking-tighter">Scalable</span>

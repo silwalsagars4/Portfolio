@@ -16,7 +16,7 @@ const FloatingBall = () => {
   const gravity = 0.15;
   const friction = 0.99;
   const bounce = 0.7;
-  const ballSize = 54;
+  const ballSize = window.innerWidth < 768 ? 36 : 54;
 
   const updateCollidables = () => {
     const elements = document.querySelectorAll('.tech-border, button, .glass-card, .section-divider');
@@ -153,11 +153,11 @@ const FloatingBall = () => {
         isDragging.current = false;
       }}
       whileDrag={{ scale: 1.1, cursor: "grabbing" }}
-      className="w-[54px] h-[54px] z-[100] cursor-grab pointer-events-auto touch-none"
+      className="w-[36px] h-[36px] md:w-[54px] md:h-[54px] z-[100] cursor-grab pointer-events-auto touch-none"
     >
-      <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
-      <div className="relative w-full h-full bg-gradient-to-br from-primary via-primary/50 to-secondary rounded-full border border-white/30 shadow-[0_0_20px_rgba(0,242,255,0.5)] flex items-center justify-center backdrop-blur-md">
-        <div className="w-4 h-4 bg-white/40 rounded-full blur-[1px] -translate-x-1.5 -translate-y-1.5" />
+      <div className="absolute inset-0 bg-primary opacity-20 rounded-full blur-xl animate-pulse" />
+      <div className="relative w-full h-full bg-gradient-to-br from-primary via-primary to-secondary rounded-full border border-white/40 shadow-[0_0_25px_rgba(0,242,255,0.4)] flex items-center justify-center backdrop-blur-md">
+        <div className="w-4 h-4 bg-white opacity-40 rounded-full blur-[1px] -translate-x-1.5 -translate-y-1.5" />
         <div className="absolute inset-2 border border-white/10 rounded-full animate-[spin_12s_linear_infinite]" />
       </div>
     </motion.div>
