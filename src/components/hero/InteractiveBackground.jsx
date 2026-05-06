@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 const InteractiveBackground = () => {
   const canvasRef = useRef(null);
@@ -11,7 +10,7 @@ const InteractiveBackground = () => {
     let animationFrameId;
 
     const particles = [];
-    const particleCount = 60;
+    const particleCount = 75; // Balanced density
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -30,21 +29,23 @@ const InteractiveBackground = () => {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5 + 0.1;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.opacity = Math.random() * 0.4 + 0.1;
       }
 
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
       }
 
       draw() {
-        ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity + 0.2})`; // Increased brightness by 10%
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -62,8 +63,8 @@ const InteractiveBackground = () => {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
-            ctx.strokeStyle = `rgba(0, 242, 255, ${0.1 * (1 - distance / 150)})`;
+          if (distance < 160) {
+            ctx.strokeStyle = `rgba(0, 242, 255, ${0.15 * (1 - distance / 160)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -95,7 +96,7 @@ const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-0 pointer-events-none opacity-40"
+      className="fixed inset-0 z-[0] pointer-events-none opacity-50"
     />
   );
 };

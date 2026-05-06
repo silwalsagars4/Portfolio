@@ -38,11 +38,12 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: #00f2ff; /* Robust fallback */
+    background: linear-gradient(to right, #00f2ff, #7000ff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    display: inline-block;
   }
 
   .neon-border {

@@ -53,7 +53,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 bg-background relative overflow-hidden">
+    <section id="about" className="py-24 px-6 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

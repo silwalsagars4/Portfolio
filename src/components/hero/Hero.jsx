@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 import Heroimg from "../../assets/hero/sagar.png";
-import InteractiveBackground from "./InteractiveBackground";
 import { cn } from "../../utils/cn";
 import { Shield, Cloud, Code2, Server, Download } from "lucide-react";
 import TerminalText from "../TerminalText/TerminalText";
@@ -27,9 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden bg-[#0a0a0c]">
-      {/* Interactive Background */}
-      <InteractiveBackground />
+    <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-20 overflow-hidden bg-transparent">
 
       {/* Mouse Spotlight Effect */}
       <motion.div
@@ -56,16 +53,16 @@ const Hero = () => {
           >
             Available for New Opportunities
           </motion.div>
-          
-          <h1 className="text-5xl md:text-8xl font-display font-bold leading-[1.1] mb-8 tracking-tighter">
+
+          <h1 className="text-6xl md:text-8xl font-display font-bold leading-[1.1] mb-8 tracking-tighter">
             SAGAR<br />
             <span className="text-gradient">
               SILWAL
             </span>
           </h1>
-          
+
           <div className="text-xl text-muted leading-relaxed mb-10 max-w-xl">
-            <TerminalText text="Associate Network and System Engineer @ CloudHimalaya. Architecting secure, scalable, and resilient digital infrastructures." />
+            <TerminalText text="Associate Network and System Engineer @Cloud_Himalaya. Architecting secure, scalable, and resilient digital infrastructures." />
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
@@ -100,11 +97,23 @@ const Hero = () => {
             {/* Cyber Ring */}
             <div className="absolute -inset-10 border border-primary/10 rounded-full animate-[spin_20s_linear_infinite]" />
             <div className="absolute -inset-10 border-t-2 border-primary/40 rounded-full animate-[spin_3s_linear_infinite]" />
-            
+
             <motion.div
-              whileHover={{ rotateY: 10, rotateX: -10 }}
               style={{ perspective: 1000 }}
-              className="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px] rounded-full overflow-hidden tech-border border-white/10 shadow-[0_0_100px_rgba(0,242,255,0.1)] transition-all duration-500"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+                e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+              }}
+              className="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px] rounded-full overflow-hidden tech-border border-white/10 shadow-[0_0_100px_rgba(0,242,255,0.1)] transition-transform duration-300 ease-out"
             >
               <img
                 src={Heroimg}

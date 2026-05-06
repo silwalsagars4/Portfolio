@@ -78,7 +78,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-6 bg-surface/30 relative overflow-hidden">
+    <section id="experience" className="py-24 px-6 bg-transparent relative overflow-hidden">
       <div className="scanline" />
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -121,7 +121,7 @@ const Experience = () => {
             />
             <JobCard
               image={timesglobal}
-              title="IT Internship  @Times Global"
+              title="IT Internship  @Times_Global"
               date="Jun 2025 - Sep 2025"
               descriptions={[
                 "Engineered a digital Visitor Management System (VMS) to maintain records, device entry, and automated gate passes.",
