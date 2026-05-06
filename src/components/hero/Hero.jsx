@@ -68,7 +68,7 @@ const Hero = () => {
             <TerminalText text="Associate Network and System Engineer @ CloudHimalaya. Architecting secure, scalable, and resilient digital infrastructures." />
           </div>
 
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -129,7 +129,8 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0], x: [0, 5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-4 -left-4 md:-top-10 md:-left-12 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              className="absolute -top-2 -left-2 md:-top-10 md:-left-12 px-3 py-1.5 md:px-6 md:py-3 glass rounded-xl md:rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              style={{ WebkitBackdropFilter: 'blur(20px)' }}
             >
               <Shield className="text-primary w-4 h-4 md:w-5 md:h-5" />
               <div className="flex flex-col">
@@ -141,7 +142,8 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, -15, 0], x: [0, -5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-1/4 -right-8 md:-right-20 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              className="absolute top-1/4 -right-4 md:-right-20 px-3 py-1.5 md:px-6 md:py-3 glass rounded-xl md:rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              style={{ WebkitBackdropFilter: 'blur(20px)' }}
             >
               <Cloud className="text-primary w-4 h-4 md:w-5 md:h-5" />
               <div className="flex flex-col">
@@ -153,7 +155,8 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              className="absolute bottom-1/4 -left-8 md:-left-24 px-4 py-2 md:px-6 md:py-3 glass rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              className="absolute bottom-1/4 -left-4 md:-left-24 px-3 py-1.5 md:px-6 md:py-3 glass rounded-xl md:rounded-2xl border-primary/30 shadow-2xl backdrop-blur-2xl flex items-center gap-2 md:gap-3 z-20"
+              style={{ WebkitBackdropFilter: 'blur(20px)' }}
             >
               <Server className="text-primary w-4 h-4 md:w-5 md:h-5" />
               <div className="flex flex-col">
