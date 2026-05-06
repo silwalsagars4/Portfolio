@@ -39,9 +39,9 @@ const JobCard = ({ image, title, date, descriptions, index }) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ delay: index * 0.2 }}
     viewport={{ once: true }}
-    className="tech-border p-6 md:p-8 flex flex-col md:flex-row gap-8 relative group hover:border-primary/50 transition-all duration-500"
+    className="tech-border p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-8 relative group hover:border-primary/50 transition-all duration-500"
   >
-    <div className="w-20 h-20 md:w-28 md:h-28 glass p-3 shrink-0 overflow-hidden group/logo hover:scale-110 transition-all duration-500 flex items-center justify-center border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)] bg-white/5 backdrop-blur-xl">
+    <div className="w-32 h-32 md:w-28 md:h-28 glass p-3 shrink-0 overflow-hidden group/logo hover:scale-110 transition-all duration-500 flex items-center justify-center border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)] bg-white/5 backdrop-blur-xl">
       <img src={image} alt={title} className="w-full h-full object-contain group-hover/logo:scale-110 transition-transform duration-500" />
     </div>
     <div className="flex-1">

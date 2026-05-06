@@ -27,8 +27,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
-        "fixed top-4 left-4 right-4 z-50 transition-all duration-300 px-6 py-4 tech-border",
-        scrolled ? "bg-background/90" : "bg-transparent"
+        "fixed top-4 left-4 right-4 z-50 transition-all duration-300 px-6 py-4 tech-border shadow-[0_0_20px_rgba(0,242,255,0.2)]",
+        scrolled ? "bg-background/90 shadow-[0_0_30px_rgba(0,242,255,0.3)]" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">

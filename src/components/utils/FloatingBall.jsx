@@ -155,8 +155,15 @@ const FloatingBall = () => {
       whileDrag={{ scale: 1.1, cursor: "grabbing" }}
       className="w-[36px] h-[36px] md:w-[54px] md:h-[54px] z-[100] cursor-grab pointer-events-auto touch-none"
     >
-      <div className="absolute inset-0 bg-primary opacity-20 rounded-full blur-xl animate-pulse" />
-      <div className="relative w-full h-full bg-gradient-to-br from-primary via-primary to-secondary rounded-full border border-white/40 shadow-[0_0_25px_rgba(0,242,255,0.4)] flex items-center justify-center backdrop-blur-md" style={{ WebkitBackdropFilter: 'blur(12px)' }}>
+      <div className="absolute inset-0 bg-primary rounded-full blur-xl animate-pulse" style={{ opacity: 0.25 }} />
+      <div 
+        className="relative w-full h-full rounded-full border border-white/40 shadow-[0_0_15px_rgba(0,242,255,0.6)] flex items-center justify-center overflow-hidden" 
+        style={{ 
+          background: 'linear-gradient(135deg, #00f2ff, #7000ff)',
+          WebkitBackdropFilter: 'blur(8px)',
+          backdropFilter: 'blur(8px)'
+        }}
+      >
         <div className="w-4 h-4 bg-white opacity-40 rounded-full blur-[1px] -translate-x-1.5 -translate-y-1.5" />
         <div className="absolute inset-2 border border-white/10 rounded-full animate-[spin_12s_linear_infinite]" />
       </div>
